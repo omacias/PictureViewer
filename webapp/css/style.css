@@ -1,0 +1,82 @@
+body {
+  background-color: #152B39;
+  font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
+}
+
+div .titleBackground {
+  background-image: url('../img/road.jpg');
+  color: #FFF;
+  background-size: cover;
+  margin-bottom: 0px;
+}
+
+.opacityBackground {
+  background-color: #5F5F5F;
+  border-radius: 6px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.opacityBackground:hover {
+  cursor: pointer;
+}
+
+div .authorsDiv {
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 6px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+div .author {
+  padding: 8px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  color: #FFF;
+  border-color: #F2F2F2;
+  border-style: solid;
+  border-width: thick;
+  height: 150px;
+  background-size: cover;
+}
+
+.spanLabel {
+  background-color: #FFF;
+  color: black;
+  border-radius: 6px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  padding: 2px;
+  font-weight: bold;
+}
+
+div .recentPhoto {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-color: #C5C9CC;
+  border-style: solid;
+  border-width: thick;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #838FB5;
+  color: #FFF;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div .iconsDiv {
+  color: #152B39;
+}
+
+div .finalText {
+  color: #FFF;
+  margin-left: 0px;
+  margin-right: 0px;
+}
