@@ -1,0 +1,25 @@
+{
+  "name": "Picture_Viewer",
+  "version": "1.0.0",
+  "description": "Photo view application",
+  "license": "NA",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "npm install && npm install -g bower && bower install",
+    "prebuild": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:omacias/PictureViewer.git"
+  },
+  "author": {
+    "name": "Salvador Macias",
+    "email": "salvador.macias.91@gmail.com"
+  },
+  "dependencies": {
+    "express": "3.5.1",
+    "nunjucks" : "2.3.0",
+    "bower": "1.7.9"
+  }
+}

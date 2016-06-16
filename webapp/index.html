@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Picture Viewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/angularjs/angular.min.js"></script>
+    <script>
+      var myApp = angular.module('myApp', []);
+    </script>
+  </head>
+  <body ng-app="myApp">
+    <div class="container" ng-controller="indexController">
+      <header-app title="title" description="description" ng-click="redirectHome()"></header-app>
+
+      <div class="row authorsDiv">
+        <div class="col-md-4 author" style="background-image: url('{{photographer.style}}')"
+        ng-repeat="photographer in photographers">
+          <span class="spanLabel">{{photographer.name}}</span><br>
+          <span class="spanLabel">{{photographer.from}}</span><br>
+          <a href="{{photographer.fb}}" target="_blank"><i class="fa fa-facebook-square fa-lg spanLabel"></i></a>
+          &nbsp;<span class="spanLabel">{{photographer.fbShort}}</span>
+        </div>
+      </div>
+      <br>
+      <div class="row recentPhoto">
+        <div class="col-md-6 col-centered iconsDiv">
+          <i class="fa fa-space-shuttle fa-5x"></i>
+          <i class="fa fa-car fa-5x"></i>
+          <i class="fa fa-bicycle fa-5x"></i>
+          <i class="fa fa-train fa-5x"></i>
+          <i class="fa fa-truck fa-5x"></i>
+        </div>
+        <div class="col-md-6 col-centered">
+          <h1><strong>Look At What We Got Here</strong></h1>
+          <h4>These are some pictures taken recently, you can help us adding your comments and personal experiences</h4>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <div class="row finalText">
+        <i class="fa fa-chevron-circle-right"></i>
+        <span>Powered By AngularJs and NodeJs, Mexico 2016. All rights reserved.</span>
+      <div>
+    </div>
+
+    <script src="js/controller/indexController.js"></script>
+    <script src="js/directives/header.js"></script>
+    <script src="js/services/photographers.js"></script>
+  </body>
+</html>
