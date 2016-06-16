@@ -14,8 +14,11 @@
 
 ## Deployment
 Follow the steps to deploy in your workstation.
+
 Software required:
+
 -nodejs v0.10.40
+
 -npm v1.4.28
 
 * Checkout project
@@ -26,13 +29,13 @@ $ npm install
 ```sh
 $ bower install
 ```
-* If you face issues running this command, try first to run this:
+* If you face issues running "bower install", try first to run this:
 ```sh
 $ npm install -g bower
 ```
 * To run the application:
 ```sh
-$ node install
+$ node app.js
 ```
 * now go to http://localhost/3000/
 
