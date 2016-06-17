@@ -2,7 +2,7 @@
   "name": "Picture_Viewer",
   "version": "1.0.0",
   "description": "Photo view application",
-  "license": "NA",
+  "license": "MIT",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

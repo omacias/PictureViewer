@@ -40,4 +40,4 @@ $ node app.js
 * now go to http://localhost/3000/
 
 ## License
-Pending
+Released under MIT License
