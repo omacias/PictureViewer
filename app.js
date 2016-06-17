@@ -5,6 +5,7 @@ var path = require('path');
 var app = express();
 var nunjucks = require('nunjucks');
 var homeController = require('./controllers/homeController');
+var imageController = require('./controllers/imageController');
 
 app.use('/img',  express.static(__dirname + '/webapp/img'));
 app.use('/js',  express.static(__dirname + '/webapp/js'));
@@ -34,6 +35,7 @@ app.get('/', function(req, res){
 });
 
 homeController.listen(app);
+imageController.listen(app);
 
 app.listen(3000, function(){
   console.log('AngularApp started on port 3000');

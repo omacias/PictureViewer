@@ -2,12 +2,19 @@
 
 exports.listen = function(app){
   load(app);
+  license(app);
   photographersJson(app);
 };
 
 function load(app){
   app.get('/Home', function(req, res){
     res.render('index.html', {});
+  });
+}
+
+function license(app){
+  app.get('/License', function(req, res){
+    res.render('license.html', {});
   });
 }
 

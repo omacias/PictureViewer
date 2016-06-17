@@ -18,7 +18,7 @@
     "email": "salvador.macias.91@gmail.com"
   },
   "dependencies": {
-    "express": "3.5.1",
+    "express": "4.8.0",
     "nunjucks" : "2.3.0",
     "bower": "1.7.9"
   }

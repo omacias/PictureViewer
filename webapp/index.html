@@ -4,7 +4,7 @@
     <title>Picture Viewer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon1.ico" type="image/x-icon" />
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -19,7 +19,15 @@
     <div class="container" ng-controller="indexController">
       <header-app title="title" description="description" ng-click="redirectHome()"></header-app>
 
-      <div class="row authorsDiv">
+      <div class="row authorsDiv blueDiv">
+        <br>
+        <div class="col-md-6 col-centered">
+          <h2>
+            <strong>Met The Guys Who Bring The Pics That You Love</strong><br>
+            <i class="fa fa-thumbs-o-up fa-2x iconBlue"></i>
+          </h2>
+        </div>
+        <br><br>
         <div class="col-md-4 author" style="background-image: url('{{photographer.style}}')"
         ng-repeat="photographer in photographers">
           <span class="spanLabel">{{photographer.name}}</span><br>
@@ -29,8 +37,8 @@
         </div>
       </div>
       <br>
-      <div class="row recentPhoto">
-        <div class="col-md-6 col-centered iconsDiv">
+      <div class="row recentPhoto blueDiv">
+        <div class="col-md-6 col-centered iconBlue">
           <i class="fa fa-space-shuttle fa-5x"></i>
           <i class="fa fa-car fa-5x"></i>
           <i class="fa fa-bicycle fa-5x"></i>
@@ -45,14 +53,12 @@
 
       <br>
       <br>
-      <div class="row finalText">
-        <i class="fa fa-chevron-circle-right"></i>
-        <span>Powered By AngularJs and NodeJs, Mexico 2016. All rights reserved.</span>
-      <div>
+      <footer-app></footer-app>
     </div>
 
     <script src="js/controller/indexController.js"></script>
     <script src="js/directives/header.js"></script>
+    <script src="js/directives/footer.js"></script>
     <script src="js/services/photographers.js"></script>
   </body>
 </html>

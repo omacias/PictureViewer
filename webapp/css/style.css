@@ -8,6 +8,7 @@ div .titleBackground {
   color: #FFF;
   background-size: cover;
   margin-bottom: 0px;
+  border-radius: 0px !important;
 }
 
 .opacityBackground {
@@ -24,15 +25,13 @@ div .titleBackground {
 div .authorsDiv {
   margin-left: 0px;
   margin-right: 0px;
-  border-radius: 6px;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+  padding: 1em;
 }
 
 div .author {
   padding: 8px;
-  opacity: 1;
-  filter: alpha(opacity=100);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
   color: #FFF;
   border-color: #F2F2F2;
   border-style: solid;
@@ -56,6 +55,9 @@ div .recentPhoto {
   padding-bottom: 4em;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+div .blueDiv {
   border-color: #C5C9CC;
   border-style: solid;
   border-width: thick;
@@ -71,7 +73,7 @@ div .recentPhoto {
     text-align: center;
 }
 
-div .iconsDiv {
+.iconBlue {
   color: #152B39;
 }
 
