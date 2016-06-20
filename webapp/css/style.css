@@ -98,11 +98,17 @@ div .album {
   text-align: center;
   opacity: 0.6;
   filter: alpha(opacity=60);
+  z-index: 99;
   -webkit-transition: opacity .5s ease-in-out;
   -moz-transition: opacity .5s ease-in-out;
   -ms-transition: opacity .5s ease-in-out;
   -o-transition: opacity .5s ease-in-out;
   transition: opacity .5s ease-in-out;
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+   -moz-transition: all 1s ease; /* Firefox */
+   -ms-transition: all 1s ease; /* IE 9 */
+   -o-transition: all 1s ease; /* Opera */
+   transition: all 1s ease;
 }
 
 div .album:hover {
@@ -112,4 +118,10 @@ div .album:hover {
   border: solid 1px #dee0e3;
   border-radius: 4px;
   color: #FFF;
+  z-index: 9999;
+  -webkit-transform:scale(1.05); /* Safari and Chrome */
+    -moz-transform:scale(1.05); /* Firefox */
+    -ms-transform:scale(1.05); /* IE 9 */
+    -o-transform:scale(1.05); /* Opera */
+     transform:scale(1.05);
 }
