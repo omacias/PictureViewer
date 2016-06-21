@@ -8,6 +8,6 @@ exports.listen = function(app){
 
 function getPicture(app){
   app.get('/getPicture/:uniqueId', function(req, res){
-    res.sendFile(path.resolve(__dirname + '/../webapp/img/'+ req.params.uniqueId +'.jpg'));
+    res.sendFile(path.resolve(__dirname + '/../resources/img/'+ req.params.uniqueId +'.jpg'));
   });
 }

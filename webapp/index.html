@@ -15,20 +15,24 @@
       var myApp = angular.module('myApp', []);
     </script>
   </head>
-  <body ng-app="myApp">
-    <div class="container" ng-controller="indexController">
+  <body ng-app="myApp" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container-fluid myContainer" ng-controller="indexController">
+      <menu-nav></menu-nav>
       <header-app title="title" description="description" ng-click="redirectHome()"></header-app>
 
-      <div class="row authorsDiv blueDiv">
+      <div class="row authorsDiv rowDiv blueDiv" id="photographers">
         <br>
-        <div class="col-md-6 col-centered">
+        <div class="col-md-8 col-centered">
           <h2>
-            <strong>Met The Guys Who Bring The Pics That You Love</strong><br>
+            <strong>Meet The Guys Who Bring The Pics That You Love</strong><br><br>
             <i class="fa fa-thumbs-o-up fa-2x iconBlue"></i>
           </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
         </div>
         <br><br>
-        <div class="col-md-4 author" style="background-image: url('{{photographer.style}}')"
+        <div class="col-md-4 author" ng-style="{'background-image': 'url('+photographer.style+')'}"
         ng-repeat="photographer in photographers">
           <span class="spanLabel">{{photographer.name}}</span><br>
           <span class="spanLabel">{{photographer.from}}</span><br>
@@ -37,7 +41,7 @@
         </div>
       </div>
       <br>
-      <div class="row recentPhoto blueDiv">
+      <div class="row recentPhoto rowDiv greenDiv" id="albums">
         <div class="col-md-6 col-centered iconBlue">
           <i class="fa fa-space-shuttle fa-5x"></i>
           <i class="fa fa-car fa-5x"></i>
@@ -45,31 +49,29 @@
           <i class="fa fa-train fa-5x"></i>
           <i class="fa fa-truck fa-5x"></i>
         </div>
-        <div class="col-md-6 col-centered">
+        <div class="col-md-8 col-centered">
           <h1><strong>Look At What We Got Here</strong></h1>
-          <h4>These are some pictures taken recently, you can help us adding your comments and personal experiences</h4>
+          <h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </h4>
         </div>
         <br>
-        <div class="row col-centered tightBorder">
-
-          <div title="Click to see full album" class="col-md-6 album " style="background-image: url('http://www.edmonton.ca/attractions_events/documents/Images/BigPicturePrize2_DickTam.jpg')">
-            <h2><strong><span>Ultricies&nbsp;</span><i class="fa fa-television"></i></strong></h2>
-            <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+        <div class="row col-centered tightBorder" ng-controller="albumsController">
+          <div class="col-md-6 col-centered">
+            <input ng-show="albums.length" type="text" class="form-control" placeholder="Search Album" ng-model="searchFilter">
+            <p ng-show="!albums.length">No Albums Available <i class="fa fa-exclamation-circle"></i></p>
+            <br>
           </div>
 
-          <div title="Click to see full album" class="col-md-6 album " style="background-image: url('http://www.edmonton.ca/attractions_events/documents/Images/BigPicturePrize2_DickTam.jpg')">
-            <h2><strong><span>Ultricies&nbsp;</span><i class="fa fa-television"></i></strong></h2>
-            <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+          <div class="col-md-6 albumContainer" ng-repeat="album in albums | filter: searchFilter">
+            <div class="album" ng-style="{'background-image': 'url('+album.albumCover+')'}">
+              <h2><strong><span>{{album.albumName}}&nbsp;</span><i class="fa fa-television"></i></strong></h2>
+              <p>{{album.albumDescription}}</p>
+              <p>{{album.albumLocation}}.&nbsp;{{album.albumDate | date}}</p>
+            </div>
           </div>
-
-          <div title="Click to see full album" class="col-md-6 album " style="background-image: url('http://www.edmonton.ca/attractions_events/documents/Images/BigPicturePrize2_DickTam.jpg')">
-            <h2><strong><span>Ultricies&nbsp;</span><i class="fa fa-television"></i></strong></h2>
-            <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-          </div>
-          
         </div>
       </div>
-
       <br>
       <br>
       <footer-app></footer-app>
@@ -78,6 +80,7 @@
     <script src="js/controller/indexController.js"></script>
     <script src="js/directives/header.js"></script>
     <script src="js/directives/footer.js"></script>
+    <script src="js/directives/menuNav.js"></script>
     <script src="js/services/photographers.js"></script>
   </body>
 </html>
