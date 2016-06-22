@@ -71,7 +71,11 @@ div .rowDiv {
 }
 
 div .greenDiv {
-  background-color: #6FC7BB;
+  background-color: #3B8B6E;
+}
+
+div .greenShadowDiv {
+  background-color: #1D5959;
 }
 
 div .blueDiv {
@@ -109,7 +113,7 @@ div .albumContainer {
 }
 
 div .album {
-  padding: 1em 2em 1em 2em;
+  padding: 1em;
   height: 200px;
   color: #FFF;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -155,14 +159,14 @@ div .album:hover {
 
 .navbar {
     margin-bottom: 0;
-    background-color: #2d2d30;
+    background-color: #3D464D;
     border: 0;
     font-size: 11px !important;
     letter-spacing: 4px;
     opacity:0.9;
     filter: alpha(opacity=90);
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 2em;
+    padding-left: 2em;
     z-index: 9999;
 }
 
