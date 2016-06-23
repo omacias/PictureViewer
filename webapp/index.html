@@ -1,34 +1,28 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="<$ app_lang $>">
   <head>
-    <title>Picture Viewer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon1.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
-    <script src="vendor/jquery/dist/jquery.min.js"></script>
-    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="vendor/angularjs/angular.min.js"></script>
+    <% include 'include/headerScripts.html' %>
     <script>
       var myApp = angular.module('myApp', []);
     </script>
   </head>
-  <body ng-app="myApp" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="container-fluid myContainer" ng-controller="indexController">
-      <menu-nav></menu-nav>
-      <header-app title="title" description="description" ng-click="redirectHome()"></header-app>
+  <body ng-app="myApp" ng-controller="indexController" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container-fluid myContainer">
+      <menu-nav title="message.getMsg('app_title')" home="message.getMsg('app_menu_home')"
+        photographers="message.getMsg('app_menu_photographers')" albums="message.getMsg('app_menu_albums')"
+        contact="message.getMsg('app_menu_contact')">
+      </menu-nav>
+      <header-app title="message.getMsg('app_title')" description="message.getMsg('app_description')" ng-click="redirectHome()"></header-app>
 
       <div class="row authorsDiv rowDiv greenShadowDiv" id="photographers">
         <br>
         <div class="col-md-8 col-centered">
           <h2>
-            <strong>Meet The Guys Who Bring The Pics That You Love</strong><br><br>
+            <strong>{{ message.getMsg('app_photographers_title') }}</strong><br><br>
             <i class="fa fa-thumbs-o-up fa-2x iconBlue"></i>
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            {{ message.getMsg('app_photographers_description') }}
           </p>
         </div>
         <br><br>
@@ -50,16 +44,16 @@
           <i class="fa fa-truck fa-5x"></i>
         </div>
         <div class="col-md-8 col-centered">
-          <h1><strong>Look At What We Got Here</strong></h1>
+          <h1><strong>{{ message.getMsg('app_albums_title') }}</strong></h1>
           <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            {{ message.getMsg('app_albums_description') }}
           </h4>
         </div>
         <br>
         <div class="row col-centered tightBorder" ng-controller="albumsController">
           <div class="col-md-6 col-centered">
-            <input ng-show="albums.length" type="text" class="form-control" placeholder="Search Album" ng-model="searchFilter">
-            <p ng-show="!albums.length">No Albums Available <i class="fa fa-exclamation-circle"></i></p>
+            <input ng-show="albums.length" type="text" class="form-control" placeholder="{{ message.getMsg('app_albums_searchPlaceholder') }}" ng-model="searchFilter">
+            <p ng-show="!albums.length">{{ message.getMsg('app_albums_noAvailable') }}<i class="fa fa-exclamation-circle"></i></p>
             <br>
           </div>
 
@@ -73,14 +67,53 @@
         </div>
       </div>
       <br>
+      <div class="row recentPhoto rowDiv solidDiv" id="contact">
+        <div class="row">
+          <div class="col-md-8 col-centered getInTouch">
+            <h2>{{ message.getMsg('app_contact_title') }}</h2>
+            <p>{{ message.getMsg('app_contact_description') }}</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-centered formDiv">
+          <form>
+            <div class="form-group">
+              <label for="name1"><h4>{{ message.getMsg('app_contact_name') }}</h4></label>
+              <input type="text" class="form-control" id="name1">
+            </div>
+            <div class="form-group">
+              <label for="email1"><h4>{{ message.getMsg('app_contact_email') }}</h4></label>
+              <input type="email" class="form-control" id="email1">
+            </div>
+            <div class="form-group">
+              <label for="textArea1"><h4>{{ message.getMsg('app_contact_message') }}</h4></label>
+              <textarea class="form-control"  rows="5" id="textArea1"></textarea>
+            </div>
+            <div class="col-centered">
+              <button type="submit" class="btn btn-default"><h4>{{ message.getMsg('app_contact_submit') }}</h4></button>
+            </div>
+          </form>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6 col-centered getInTouch">
+            <h2>{{ message.getMsg('app_contact_socialNet') }}</h2>
+            <p>{{ message.getMsg('app_contact_socialNetDesc') }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-centered socialIcons">
+            <i class="fa fa-github fa-3x"></i>
+            <i class="fa fa-facebook-square fa-3x"></i>
+            <i class="fa fa-google-plus-square fa-3x"></i>
+            <i class="fa fa-linkedin-square fa-3x"></i>
+            <i class="fa fa-youtube-play fa-3x"></i>
+          </div>
+        </div>
+      </div>
       <br>
-      <footer-app></footer-app>
+      <br>
+      <footer-app description="message.getMsg('app_footer_description')"></footer-app>
     </div>
-
-    <script src="js/controller/indexController.js"></script>
-    <script src="js/directives/header.js"></script>
-    <script src="js/directives/footer.js"></script>
-    <script src="js/directives/menuNav.js"></script>
-    <script src="js/services/photographers.js"></script>
+    <% include 'include/footerScripts.html' %>
   </body>
 </html>

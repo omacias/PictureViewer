@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var nunjucks = require('nunjucks');
+var msjs = require('./resources/language/messages_EN.json');
 var homeController = require('./controllers/homeController');
 var imageController = require('./controllers/imageController');
 
@@ -28,6 +29,15 @@ var nun = nunjucks.configure('webapp', {
         commentEnd: '#>'
     }
 });
+
+//interceptor*******************
+app.use(function(req, res, next) {
+  res.locals.app_title = msjs.app_title;
+  res.locals.app_lang = msjs.app_lang;
+  res.locals.messages = JSON.stringify(msjs);
+  next();
+});
+//******************************
 
 app.get('/', function(req, res){
   res.status(301);

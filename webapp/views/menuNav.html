@@ -1,5 +1,6 @@
 <script>
 $(document).ready(function(){
+  $('body').scrollTop(0);
   //smooth scroll
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
   if (this.hash !== "") {
@@ -23,14 +24,14 @@ $(document).ready(function(){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">&nbsp;&nbsp;Picture Viewer&nbsp;<i class="fa fa-television"></i></a>
+      <a class="navbar-brand" href="#">&nbsp;&nbsp;{{ title }}&nbsp;<i class="fa fa-television"></i></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#photographers">PHOTOGRAPHERS</a></li>
-        <li><a href="#albums">ALBUMS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li class="active"><a href="#home">{{ home }}</a></li>
+        <li><a href="#photographers">{{ photographers }}</a></li>
+        <li><a href="#albums">{{ albums }}</a></li>
+        <li><a href="#contact">{{ contact }}</a></li>
       </ul>
     </div>
   </div>

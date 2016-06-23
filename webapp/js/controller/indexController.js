@@ -1,4 +1,5 @@
-myApp.controller('indexController', ['$scope','photographers', function($scope, photographers){
+myApp.controller('indexController', ['$scope','photographers', 'message', function($scope, photographers, message){
+  $scope.message = message;
   $scope.title = 'Picture Viewer';
   $scope.description = 'Check out our pictures taken around the world';
   $scope.redirectHome = function(){

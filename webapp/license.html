@@ -1,23 +1,14 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="<$ app_lang $>">
   <head>
-    <title>Picture Viewer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon1.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
-    <script src="vendor/jquery/dist/jquery.min.js"></script>
-    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="vendor/angularjs/angular.min.js"></script>
+    <% include 'include/headerScripts.html' %>
     <script>
       var myApp = angular.module('myApp', []);
     </script>
   </head>
-  <body ng-app="myApp">
-    <div class="container-fluid" ng-controller="indexController">
-      <header-app title="title" description="description" ng-click="redirectHome()"></header-app>
+  <body ng-app="myApp" ng-controller="indexController">
+    <div class="container-fluid" >
+      <header-app title="message.getMsg('app_title')" description="message.getMsg('app_description')" ng-click="redirectHome()"></header-app>
       <br>
       <div class="row recentPhoto rowDiv ironDiv">
         <div class="col-md-6 col-centered">
@@ -41,12 +32,8 @@
 
       <br>
       <br>
-      <footer-app></footer-app>
+      <footer-app description="message.getMsg('app_footer_description')"></footer-app>
     </div>
-
-    <script src="js/controller/indexController.js"></script>
-    <script src="js/directives/header.js"></script>
-    <script src="js/directives/footer.js"></script>
-    <script src="js/services/photographers.js"></script>
+    <% include 'include/footerScripts.html' %>
   </body>
 </html>

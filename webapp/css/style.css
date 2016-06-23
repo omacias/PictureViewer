@@ -82,6 +82,10 @@ div .blueDiv {
   background-color: #838FB5;
 }
 
+div .solidDiv {
+  background-color: #2E3141;
+}
+
 div .ironDiv {
   background-color: #667177;
 }
@@ -191,4 +195,63 @@ div .album:hover {
 /* Remove border color from the collapsible button */
 .navbar-default .navbar-toggle {
     border-color: transparent;
+}
+
+div .formDiv {
+    text-align: left;
+    font-size: large;
+}
+
+.formDiv input {
+  background-color: #464C59;
+  border-width: medium;
+  color: #FFF;
+  padding: 1.1em 1em 1.1em 1em;
+  border: solid 1px #dee0e3;
+  border-radius: 4px;
+}
+
+.formDiv textarea {
+  background-color: #464C59;
+  border-width: medium;
+  color: #FFF;
+  padding: 1.1em 1em 1.1em 1em;
+  border: solid 1px #dee0e3;
+  border-radius: 4px;
+}
+
+.formDiv button {
+  background-color: #464C59;
+  border-width: medium;
+  color: #FFF;
+  padding: .1em 2em .1em 2em;
+  border: solid 1px #dee0e3;
+  border-radius: 4px;
+}
+
+.getInTouch h2 {
+  text-align: left;
+  padding: 0em 0em 1em 1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #dee0e3;
+}
+
+.getInTouch p {
+  text-align: justify;
+  padding: 2em;
+}
+
+div .socialIcons i{
+  padding: .2em;
+}
+
+div .socialIcons i:hover{
+  color: #E7746F;
+  cursor: pointer;
+  -webkit-transition: all .5s ease; /* Safari and Chrome */
+   -moz-transition: all .5s ease; /* Firefox */
+   -ms-transition: all .5s ease; /* IE 9 */
+   -o-transition: all .5s ease; /* Opera */
+   transition: all .5s ease;
 }
