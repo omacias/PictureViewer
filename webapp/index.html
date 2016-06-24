@@ -67,7 +67,7 @@
         </div>
       </div>
       <br>
-      <div class="row recentPhoto rowDiv solidDiv" id="contact">
+      <div class="row recentPhoto rowDiv solidDiv" ng-controller="contactController" id="contact">
         <div class="row">
           <div class="col-md-8 col-centered getInTouch">
             <h2>{{ message.getMsg('app_contact_title') }}</h2>
@@ -75,21 +75,25 @@
           </div>
         </div>
         <div class="col-md-6 col-centered formDiv">
-          <form>
-            <div class="form-group">
-              <label for="name1"><h4>{{ message.getMsg('app_contact_name') }}</h4></label>
-              <input type="text" class="form-control" id="name1">
+          <form action="#" autocomplete="off" novalidate>
+            <div class="form-group {{name.classError}}">
+              <label for="nameUser" class="control-label"><h4>{{ message.getMsg('app_contact_name') }}</h4></label>
+              <input type="text" class="form-control" id="nameUser" ng-model="name.value" maxlength="50" ng-blur="validateInput(name, false)">
+              <div class="alert alert-danger myAlert {{name.validClass}}" role="alert">{{ message.getMsg('app_contact_name_error') }}</div>
             </div>
-            <div class="form-group">
-              <label for="email1"><h4>{{ message.getMsg('app_contact_email') }}</h4></label>
-              <input type="email" class="form-control" id="email1">
+            <div class="form-group {{email.classError}}">
+              <label for="emailUser" class="control-label"><h4>{{ message.getMsg('app_contact_email') }}</h4></label>
+              <input type="text" class="form-control" id="emailUser" ng-model="email.value" maxlength="50" ng-blur="validateInput(email, true)">
+              <div class="alert alert-danger myAlert {{email.validClass}}" role="alert">{{ message.getMsg('app_contact_email_error') }}</div>
+              <div class="alert alert-danger myAlert {{email.validEmailClass}}" role="alert">{{ message.getMsg('app_contact_emailValid_error') }}</div>
             </div>
-            <div class="form-group">
-              <label for="textArea1"><h4>{{ message.getMsg('app_contact_message') }}</h4></label>
-              <textarea class="form-control"  rows="5" id="textArea1"></textarea>
+            <div class="form-group {{msgText.classError}}">
+              <label for="messageUser" class="control-label"><h4>{{ message.getMsg('app_contact_message') }}</h4></label>
+              <textarea class="form-control"  rows="5" id="messageUser" ng-model="msgText.value" maxlength="500" ng-blur="validateInput(msgText, false)"></textarea>
+              <div class="alert alert-danger myAlert {{msgText.validClass}}" role="alert">{{ message.getMsg('app_contact_message_error') }}</div>
             </div>
             <div class="col-centered">
-              <button type="submit" class="btn btn-default"><h4>{{ message.getMsg('app_contact_submit') }}</h4></button>
+              <button type="button" ng-click="submitButton()" class="btn btn-default"><h4>{{ message.getMsg('app_contact_submit') }}</h4></button>
             </div>
           </form>
         </div>

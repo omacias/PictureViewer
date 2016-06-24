@@ -255,3 +255,10 @@ div .socialIcons i:hover{
    -o-transition: all .5s ease; /* Opera */
    transition: all .5s ease;
 }
+
+div .myAlert {
+  padding: 1px;
+  margin-top: 10px;
+  font-size: small;
+  font-weight: bold;
+}
