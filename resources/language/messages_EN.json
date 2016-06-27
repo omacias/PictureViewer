@@ -24,5 +24,10 @@
   "app_contact_submit": "Submit",
   "app_contact_socialNet": "Nisl turpis nascetur interdum?",
   "app_contact_socialNetDesc": "Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.",
-  "app_footer_description": "Powered By AngularJs and NodeJs, Mexico 2016. Released under"
+  "app_footer_description": "Powered By AngularJs and NodeJs, Mexico 2016. Released under",
+  "app_modal_header_success": "Message From Page",
+  "app_modal_header_info": "Message From Page",
+  "app_modal_header_error": "Error From Page",
+  "app_modal_button_close": "Close",
+  "app_modal_loading": "Loading..."
 }

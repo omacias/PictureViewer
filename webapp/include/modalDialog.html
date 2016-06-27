@@ -1,0 +1,17 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modalSize" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+        <h4 class="modal-title" ng-bind="modalHeader"></h4>
+      </div>
+      <div class="modal-body greyText col-centered">
+        <h4>{{modalMessage}}</h4>
+        <i class="fa {{modalIcon}} fa-2x" style="color: {{modalIconColor}}"></i>
+      </div>
+      <div class="modal-footer col-centered">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{message.getMsg('app_modal_button_close')}}</button>
+      </div>
+    </div>
+  </div>
+</div>
