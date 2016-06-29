@@ -29,5 +29,9 @@
   "app_modal_header_info": "Message From Page",
   "app_modal_header_error": "Error From Page",
   "app_modal_button_close": "Close",
-  "app_modal_loading": "Loading..."
+  "app_modal_loading": "Loading...",
+  "app_message_no_albums": "We Couldn´t Load Albums, Try Later.",
+  "app_message_mail_sent": "Mail Sent Successfully!",
+  "app_message_something_wrong": "Something Went Wrong, Try Again Later.",
+  "app_message_no_photographers": "Could Not Load Photographers Information, Try Later Please."
 }

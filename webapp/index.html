@@ -6,8 +6,8 @@
       var myApp = angular.module('myApp', []);
     </script>
   </head>
-  <body ng-app="myApp" ng-controller="indexController" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="container-fluid myContainer">
+  <body ng-app="myApp" ng-controller="messageController" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container-fluid myContainer" ng-controller="indexController">
       <menu-nav title="message.getMsg('app_title')" home="message.getMsg('app_menu_home')"
         photographers="message.getMsg('app_menu_photographers')" albums="message.getMsg('app_menu_albums')"
         contact="message.getMsg('app_menu_contact')">

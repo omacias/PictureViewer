@@ -6,8 +6,8 @@
       var myApp = angular.module('myApp', []);
     </script>
   </head>
-  <body ng-app="myApp" ng-controller="indexController">
-    <div class="container-fluid" >
+  <body ng-app="myApp" ng-controller="messageController">
+    <div class="container-fluid" ng-controller="indexController">
       <header-app title="message.getMsg('app_title')" description="message.getMsg('app_description')" ng-click="redirectHome()"></header-app>
       <br>
       <div class="row recentPhoto rowDiv ironDiv">

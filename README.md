@@ -37,7 +37,7 @@ $ npm install -g bower
 ```sh
 $ node app.js
 ```
-* now go to http://localhost/3000/
+* now go to http://localhost:3000/
 
 ## License
 Released under MIT License
