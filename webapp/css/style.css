@@ -1,6 +1,8 @@
 body {
   background-color: #152B39;
   font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 div .myContainer {
@@ -205,8 +207,9 @@ div .formDiv {
 .formDiv input {
   background-color: #464C59;
   border-width: medium;
+  height: auto;
   color: #FFF;
-  padding: 1.1em 1em 1.1em 1em;
+  padding: .5em 1em .5em 1em;
   border: solid 1px #dee0e3;
   border-radius: 4px;
 }
@@ -215,7 +218,7 @@ div .formDiv {
   background-color: #464C59;
   border-width: medium;
   color: #FFF;
-  padding: 1.1em 1em 1.1em 1em;
+  padding: .5em 1em .5em 1em;
   border: solid 1px #dee0e3;
   border-radius: 4px;
 }
