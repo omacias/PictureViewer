@@ -26,7 +26,7 @@
           </p>
         </div>
         <br><br>
-        <div class="col-md-4 author" ng-style="{'background-image': 'url('+photographer.style+')'}"
+        <div class="col-md-4 col-sm-6 col-xs-12 author" ng-style="{'background-image': 'url('+photographer.style+')'}"
         ng-repeat="photographer in photographers">
           <span class="spanLabel">{{photographer.name}}</span><br>
           <span class="spanLabel">{{photographer.from}}</span><br>
@@ -57,7 +57,7 @@
             <br>
           </div>
 
-          <div class="col-md-6 albumContainer" ng-repeat="album in albums | filter: searchFilter">
+          <div class="col-md-6 col-sm-12 col-xs-12 albumContainer" ng-repeat="album in albums | filter: searchFilter">
             <div class="album" ng-style="{'background-image': 'url('+album.albumCover+')'}">
               <h2><strong><span>{{album.albumName}}&nbsp;</span><i class="fa fa-television"></i></strong></h2>
               <p>{{album.albumDescription}}</p>
@@ -69,7 +69,7 @@
       <br>
       <div class="row recentPhoto rowDiv solidDiv" ng-controller="contactController" id="contact">
         <div class="row">
-          <div class="col-md-8 col-centered getInTouch">
+          <div class="col-md-8 col-sm-8 col-xs-8 col-centered getInTouch">
             <h2>{{ message.getMsg('app_contact_title') }}</h2>
             <p>{{ message.getMsg('app_contact_description') }}</p>
           </div>
