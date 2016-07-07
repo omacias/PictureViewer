@@ -2,10 +2,10 @@
   "name": "Picture_Viewer",
   "version": "1.0.0",
   "description": "Photo view application",
-  "license": "NA",
+  "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "bower install && node app.js",
     "build": "npm install && npm install -g bower && bower install",
     "prebuild": "bower install"
   },
@@ -18,8 +18,13 @@
     "email": "salvador.macias.91@gmail.com"
   },
   "dependencies": {
-    "express": "3.5.1",
+    "express": "4.8.0",
     "nunjucks" : "2.3.0",
-    "bower": "1.7.9"
+    "bower": "1.7.9",
+    "lowdb": "0.13.1",
+    "uuid": "2.0.2"
+  },
+  "engines": {
+    "node": "4.1.1"
   }
 }

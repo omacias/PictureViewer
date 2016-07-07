@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="<$ app_lang $>">
+  <head>
+    <% include 'include/headerScripts.html' %>
+    <script>
+      var myApp = angular.module('myApp', []);
+    </script>
+  </head>
+  <body ng-app="myApp" ng-controller="messageController">
+    <div class="container-fluid" ng-controller="indexController">
+      <header-app title="message.getMsg('app_title')" description="message.getMsg('app_description')" ng-click="redirectHome()"></header-app>
+      <br>
+      <div class="row recentPhoto rowDiv ironDiv">
+        <div class="col-md-6 col-centered">
+          <strong>MIT License</strong>
+
+          <p>Copyright (c) [2016] [Salvador Macias]</p>
+          <br>
+          <p>
+            Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+          </p>
+          <br>
+          <p>
+            The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+          </p>
+          <br>
+          <p>
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+          </p>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <footer-app description="message.getMsg('app_footer_description')"></footer-app>
+    </div>
+    <% include 'include/footerScripts.html' %>
+    <br>
+  </body>
+</html>

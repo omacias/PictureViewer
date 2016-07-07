@@ -1,28 +1,49 @@
-## Picture Viewer
+# Picture Viewer
 * Web Application that shows pictures taken by photographers.
 * Version 1.0.0
 
-#Develop Team
+##Develop Team
 * Salvador Macias (omacias git user)
 
 ## Features and Stuff
-* NodeJs
-* AngularJs
-* Boostrap
-* Font Awesome
-* JQuery
+* [NodeJs](https://nodejs.org/)
+* [AngularJs](https://angularjs.org/)
+* [Bootstrap](http://getbootstrap.com/)
+* [Font Awesome](http://fontawesome.io/)
+* [JQuery](https://jquery.com/)
 
 ## Deployment
-Follow the steps to deploy in you workstation.
+Follow the steps to deploy in your workstation.
+
 Software required:
+
 -nodejs v0.10.40
+
 -npm v1.4.28
 
 * Checkout project
-* run "npm install"
-* run "bower install" (If you face issues running this command, try first to run "npm install -g bower" and try again)
-* run "node app.js"
-* now go to http://localhost/3000/
+```sh
+$ npm install
+```
+
+```sh
+$ bower install
+```
+* If you face issues running "bower install", try first to run this:
+```sh
+$ npm install -g bower
+```
+* To run the application:
+Set up your PORT variable.
+For example in windows cmd:
+```sh
+> set PORT=3000
+```
+And start node server
+```sh
+$ node app.js
+```
+* now go to http://localhost:3000/
 
 ## License
-Under approvals
+Released under MIT License

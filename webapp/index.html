@@ -1,26 +1,32 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="<$ app_lang $>">
   <head>
-    <title>Picture Viewer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
-    <script src="vendor/jquery/dist/jquery.min.js"></script>
-    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="vendor/angularjs/angular.min.js"></script>
+    <% include 'include/headerScripts.html' %>
     <script>
       var myApp = angular.module('myApp', []);
     </script>
   </head>
-  <body ng-app="myApp">
-    <div class="container" ng-controller="indexController">
-      <header-app title="title" description="description" ng-click="redirectHome()"></header-app>
+  <body ng-app="myApp" ng-controller="messageController" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container-fluid myContainer" ng-controller="indexController">
+      <menu-nav title="message.getMsg('app_title')" home="message.getMsg('app_menu_home')"
+        photographers="message.getMsg('app_menu_photographers')" albums="message.getMsg('app_menu_albums')"
+        contact="message.getMsg('app_menu_contact')">
+      </menu-nav>
+      <header-app title="message.getMsg('app_title')" description="message.getMsg('app_description')" ng-click="redirectHome()"></header-app>
 
-      <div class="row authorsDiv">
-        <div class="col-md-4 author" style="background-image: url('{{photographer.style}}')"
+      <div class="row authorsDiv rowDiv greenShadowDiv" id="photographers">
+        <br>
+        <div class="col-md-8 col-centered">
+          <h2>
+            <strong>{{ message.getMsg('app_photographers_title') }}</strong><br><br>
+            <i class="fa fa-thumbs-o-up fa-2x iconBlue"></i>
+          </h2>
+          <p>
+            {{ message.getMsg('app_photographers_description') }}
+          </p>
+        </div>
+        <br><br>
+        <div class="col-md-4 col-sm-6 col-xs-12 author" ng-style="{'background-image': 'url('+photographer.style+')'}"
         ng-repeat="photographer in photographers">
           <span class="spanLabel">{{photographer.name}}</span><br>
           <span class="spanLabel">{{photographer.from}}</span><br>
@@ -29,30 +35,90 @@
         </div>
       </div>
       <br>
-      <div class="row recentPhoto">
-        <div class="col-md-6 col-centered iconsDiv">
+      <div class="row recentPhoto rowDiv greenDiv" id="albums">
+        <div class="col-md-6 col-centered iconBlue">
           <i class="fa fa-space-shuttle fa-5x"></i>
           <i class="fa fa-car fa-5x"></i>
           <i class="fa fa-bicycle fa-5x"></i>
           <i class="fa fa-train fa-5x"></i>
           <i class="fa fa-truck fa-5x"></i>
         </div>
-        <div class="col-md-6 col-centered">
-          <h1><strong>Look At What We Got Here</strong></h1>
-          <h4>These are some pictures taken recently, you can help us adding your comments and personal experiences</h4>
+        <div class="col-md-8 col-centered">
+          <h1><strong>{{ message.getMsg('app_albums_title') }}</strong></h1>
+          <h4>
+            {{ message.getMsg('app_albums_description') }}
+          </h4>
+        </div>
+        <br>
+        <div class="row col-centered tightBorder" ng-controller="albumsController">
+          <div class="col-md-6 col-centered">
+            <input ng-show="albums.length" type="text" class="form-control" placeholder="{{ message.getMsg('app_albums_searchPlaceholder') }}" ng-model="searchFilter">
+            <p ng-show="!albums.length">{{ message.getMsg('app_albums_noAvailable') }}<i class="fa fa-exclamation-circle"></i></p>
+            <br>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12 albumContainer" ng-repeat="album in albums | filter: searchFilter">
+            <div class="album" ng-style="{'background-image': 'url('+album.albumCover+')'}">
+              <h2><strong><span>{{album.albumName}}&nbsp;</span><i class="fa fa-television"></i></strong></h2>
+              <p>{{album.albumDescription}}</p>
+              <p>{{album.albumLocation}}.&nbsp;{{album.albumDate | date}}</p>
+            </div>
+          </div>
         </div>
       </div>
-
+      <br>
+      <div class="row recentPhoto rowDiv solidDiv" ng-controller="contactController" id="contact">
+        <div class="row">
+          <div class="col-md-8 col-centered getInTouch">
+            <h2>{{ message.getMsg('app_contact_title') }}</h2>
+            <p>{{ message.getMsg('app_contact_description') }}</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-centered formDiv">
+          <form action="#" autocomplete="off" novalidate>
+            <div class="form-group {{name.classError}}">
+              <label for="nameUser" class="control-label"><h4>{{ message.getMsg('app_contact_name') }}</h4></label>
+              <input type="text" class="form-control" id="nameUser" ng-model="name.value" maxlength="50" ng-blur="validateInput(name, false)">
+              <div class="alert alert-danger myAlert {{name.validClass}}" role="alert">{{ message.getMsg('app_contact_name_error') }}</div>
+            </div>
+            <div class="form-group {{email.classError}}">
+              <label for="emailUser" class="control-label"><h4>{{ message.getMsg('app_contact_email') }}</h4></label>
+              <input type="text" class="form-control" id="emailUser" ng-model="email.value" maxlength="50" ng-blur="validateInput(email, true)">
+              <div class="alert alert-danger myAlert {{email.validClass}}" role="alert">{{ message.getMsg('app_contact_email_error') }}</div>
+              <div class="alert alert-danger myAlert {{email.validEmailClass}}" role="alert">{{ message.getMsg('app_contact_emailValid_error') }}</div>
+            </div>
+            <div class="form-group {{msgText.classError}}">
+              <label for="messageUser" class="control-label"><h4>{{ message.getMsg('app_contact_message') }}</h4></label>
+              <textarea class="form-control"  rows="5" id="messageUser" ng-model="msgText.value" maxlength="500" ng-blur="validateInput(msgText, false)"></textarea>
+              <div class="alert alert-danger myAlert {{msgText.validClass}}" role="alert">{{ message.getMsg('app_contact_message_error') }}</div>
+            </div>
+            <div class="col-centered">
+              <button type="button" ng-click="submitButton()" class="btn btn-default"><h4>{{ message.getMsg('app_contact_submit') }}</h4></button>
+            </div>
+          </form>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6 col-centered getInTouch">
+            <h2>{{ message.getMsg('app_contact_socialNet') }}</h2>
+            <p>{{ message.getMsg('app_contact_socialNetDesc') }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-centered socialIcons">
+            <i class="fa fa-github fa-3x"></i>
+            <i class="fa fa-facebook-square fa-3x"></i>
+            <i class="fa fa-google-plus-square fa-3x"></i>
+            <i class="fa fa-linkedin-square fa-3x"></i>
+            <i class="fa fa-youtube-play fa-3x"></i>
+          </div>
+        </div>
+      </div>
       <br>
       <br>
-      <div class="row finalText">
-        <i class="fa fa-chevron-circle-right"></i>
-        <span>Powered By AngularJs and NodeJs, Mexico 2016. All rights reserved.</span>
-      <div>
+      <footer-app description="message.getMsg('app_footer_description')"></footer-app>
     </div>
-
-    <script src="js/controller/indexController.js"></script>
-    <script src="js/directives/header.js"></script>
-    <script src="js/services/photographers.js"></script>
+    <% include 'include/footerScripts.html' %>
+    <br>
   </body>
 </html>

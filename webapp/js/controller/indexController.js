@@ -1,6 +1,4 @@
-myApp.controller('indexController', ['$scope','photographers', function($scope, photographers){
-  $scope.title = 'Picture Viewer';
-  $scope.description = 'Check out our pictures taken around the world';
+myApp.controller('indexController', ['$scope', 'photographers', function($scope, photographers){
   $scope.redirectHome = function(){
     window.location = '/Home';
   };
@@ -8,5 +6,4 @@ myApp.controller('indexController', ['$scope','photographers', function($scope, 
   photographers.success(function(data){
     $scope.photographers = data;
   });
-
 }]);
