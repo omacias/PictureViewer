@@ -34,6 +34,12 @@ $ bower install
 $ npm install -g bower
 ```
 * To run the application:
+Set up your PORT variable.
+For example in windows cmd:
+```sh
+> set PORT=3000
+```
+And start node server
 ```sh
 $ node app.js
 ```

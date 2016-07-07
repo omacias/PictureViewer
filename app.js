@@ -72,6 +72,6 @@ function controllersListen(){
 
 function startServer(){
   app.listen(process.env.PORT, function(){
-    console.log('AngularApp started on port');
+    console.log('AngularApp started on port '+process.env.PORT);
   });
 }
