@@ -5,9 +5,9 @@
   "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "bower install && node app.js",
+    "start": "node app.js",
     "build": "npm install && npm install -g bower && bower install",
-    "prebuild": "bower install"
+    "preinstall": "bower install"
   },
   "repository": {
     "type": "git",
