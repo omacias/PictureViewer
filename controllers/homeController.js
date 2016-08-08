@@ -5,6 +5,7 @@ exports.listen = function(app){
   license(app);
   photographersJson(app);
   albumsJson(app);
+  jsonExample(app);
 };
 
 function load(app){
@@ -90,4 +91,59 @@ function photographersJson(app) {
         }
       ]);
     });
+}
+
+function jsonExample(app) {
+  app.get('/Json/get', function(req, res) {
+    res.json([
+      {
+        "ID": 1,
+        "Label": "A",
+        "NODE": [
+          {
+            "ID": 2,
+            "Label": "B",
+            "NODE": [
+              {
+                "ID": 5,
+                "Label": "E",
+                "NODE": null
+              },
+              {
+                "ID": 6,
+                "Label": "F",
+                "NODE": null
+              },
+              {
+                "ID": 7,
+                "Label": "G",
+                "NODE": null
+              }
+            ]
+          },
+          {
+            "ID": 3,
+            "Label": "C",
+            "NODE": null
+          },
+          {
+            "ID": 4,
+            "Label": "D",
+            "NODE":[
+              {
+                "ID": 8,
+                "Label": "H",
+                "NODE": null
+              },
+              {
+                "ID": 9,
+                "Label": "I",
+                "NODE": null
+              }
+            ]
+          }
+        ]
+      }
+    ]);
+  });
 }

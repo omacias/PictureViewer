@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app.js",
     "build": "npm install && npm install -g bower && bower install",
-    "preinstall": "bower install"
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
