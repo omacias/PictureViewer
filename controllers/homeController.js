@@ -95,7 +95,8 @@ function photographersJson(app) {
 
 function jsonExample(app) {
   app.get('/Json/get', function(req, res) {
-    res.json([
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.send([
       {
         "ID": 1,
         "Label": "A",
