@@ -98,54 +98,54 @@ function jsonExample(app) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "text/plain");
     res.send([
-      {
-        "ID": 1,
-        "Label": "A",
-        "NODE": [
-          {
-            "ID": 2,
-            "Label": "B",
-            "NODE": [
               {
-                "ID": 5,
-                "Label": "E",
-                "NODE": null
-              },
-              {
-                "ID": 6,
-                "Label": "F",
-                "NODE": null
-              },
-              {
-                "ID": 7,
-                "Label": "G",
-                "NODE": null
+                "ID": 1,
+                "Label": "A",
+                "CHILD": [
+                  {
+                    "ID": 2,
+                    "Label": "B",
+                    "CHILD": [
+                      {
+                        "ID": 5,
+                        "Label": "E",
+                        "CHILD": null
+                      },
+                      {
+                        "ID": 6,
+                        "Label": "F",
+                        "CHILD": null
+                      },
+                      {
+                        "ID": 7,
+                        "Label": "G",
+                        "CHILD": null
+                      }
+                    ]
+                  },
+                  {
+                    "ID": 3,
+                    "Label": "C",
+                    "CHILD": null
+                  },
+                  {
+                    "ID": 4,
+                    "Label": "D",
+                    "CHILD":[
+                      {
+                        "ID": 8,
+                        "Label": "H",
+                        "CHILD": null
+                      },
+                      {
+                        "ID": 9,
+                        "Label": "I",
+                        "CHILD": null
+                      }
+                    ]
+                  }
+                ]
               }
-            ]
-          },
-          {
-            "ID": 3,
-            "Label": "C",
-            "NODE": null
-          },
-          {
-            "ID": 4,
-            "Label": "D",
-            "NODE":[
-              {
-                "ID": 8,
-                "Label": "H",
-                "NODE": null
-              },
-              {
-                "ID": 9,
-                "Label": "I",
-                "NODE": null
-              }
-            ]
-          }
-        ]
-      }
-    ]);
+            ]);
   });
 }
