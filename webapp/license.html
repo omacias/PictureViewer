@@ -5,17 +5,6 @@
     <script>
       var myApp = angular.module('myApp', []);
     </script>
-    <script src="http://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
-    <script>
-    window.addEventListener('load', onVrViewLoad)
-    function onVrViewLoad() {
-      var vrView = new VRView.Player('#vrview', {
-        image: 'https://raw.githubusercontent.com/omacias/NumberUtil/image/360-panorama-matador-seo.jpg',
-        width: '1024',
-        height: '512'
-      });
-    }
-    </script>
   </head>
   <body ng-app="myApp" ng-controller="messageController">
     <div class="container-fluid" ng-controller="indexController">
@@ -42,8 +31,7 @@
       </div>
 
       <br>
-      <br>
-      <div id="vrview"></div>
+      <br>      
       <footer-app description="message.getMsg('app_footer_description')"></footer-app>
     </div>
     <% include 'include/footerScripts.html' %>
