@@ -8,6 +8,7 @@ exports.listen = function(app){
 
 function getPicture(app){
   app.get('/getPicture/:uniqueId', function(req, res){
+    res.header('Access-Control-Allow-Origin' , '*' );
     res.sendFile(path.resolve(__dirname + '/../resources/img/'+ req.params.uniqueId +'.jpg'));
   });
 }
