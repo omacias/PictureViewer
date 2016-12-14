@@ -4,9 +4,6 @@
     <% include 'include/headerScripts.html' %>
     <script>
       var myApp = angular.module('myApp', []);
-      window.onerror = function (errorMsg, url, lineNumber) {
-          alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
-      }
     </script>
   </head>
   <body ng-app="myApp" ng-controller="messageController">
@@ -39,7 +36,7 @@
         height="300px"
         allowfullscreen
         frameborder="0"
-        src="http://googlevr.github.io/vrview/?image=http://pictureviewer.herokuapp.com/getPicture/360-panorama-matador-seo">
+        src="http://googlevr.github.io/vrview/?image=https://pictureviewer.herokuapp.com/getPicture/360-panorama-matador-seo">
       </iframe>
       <footer-app description="message.getMsg('app_footer_description')"></footer-app>
     </div>
